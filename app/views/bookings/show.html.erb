@@ -1,0 +1,10 @@
+<h1>Booking</h1>
+
+<h3> Confirmation number: <%= @booking.id %></h3>
+<p>Start : <%= @booking.reservation_begin %> - End : <%= @booking.reservation_end %></p>
+
+<h2>Transport details :</h2>
+ <p> Brand : <%= @booking.transport.brand %></p>
+    <p> Power : <%= @booking.transport.horse %></p>
+    <p> Year : <%= @booking.transport.year %></p>
+    <p> Price per day : <%= @booking.transport.price %></p>
