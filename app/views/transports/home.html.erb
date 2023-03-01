@@ -4,4 +4,10 @@
 <%= link_to "SINSCRIRE",  new_user_registration_path, class: 'linkco' %>
 <%= link_to "SE DECONNECTER", destroy_user_session_path, data: {turbo_method: :delete}, class: 'linkco' %>
 
+<ul>
+  <% @transports.each do |transport| %>
+  <li><%= link_to transport.brand, transport_path(transport.id) %>
+  <%= transport.year %> - <%= transport.price %>
+  <% end %>
+</ul>
 

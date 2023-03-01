@@ -1,12 +1,13 @@
 <h1>Ajouter un moyen de transport de folie</h1>
 
 <div class="container">
-  <div class="row m-3">
-    <div class="col m-3">
+  <div class="row">
+    <div class="col">
       <%= simple_form_for @transport do |f| %>
         <%= f.input :brand, placeholder: "Write the type of transport" %>
         <%= f.input :horse, placeholder: "Which power" %>
         <%= f.input :year, placeholder: "Year" %>
+        <%= f.input :price, placeholder: "Price per day" %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit "Submit list", class: "btn btn-primary" %>
       <% end %>

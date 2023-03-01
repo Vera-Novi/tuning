@@ -1,10 +1,22 @@
 <h1>Transport - <%= @transport.brand %></h1>
 
+<h2><ul class="transport-group">
+
 <% if @transport.photos.attached? %>
-  <%# <%= cl_image_tag @transport.photos.key, width:300, height:300, crop: :fill %>
   <% @transport.photos.each do |photo| %>
     <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
 <% else %>
-  <%= 'c la merde' %>
+  <%= 'No picture Available' %>
 <% end %>
+  
+    <p> Brand : <%= @transport.brand %></p>
+    <p> Power : <%= @transport.horse %></p>
+    <p> Year : <%= @transport.year %></p>
+    <p> Price per day : <%= @transport.price %></p>
+
+</ul>
+</h2>
+<div class="btn btn-warning"><%= link_to 'Back to transports', root_path %></div>
+ <div class="btn btn-danger"> <%= link_to "Delete", transport_path(@transport.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+</div>
