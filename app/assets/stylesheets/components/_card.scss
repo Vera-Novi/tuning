@@ -1,4 +1,4 @@
-.card-container {
+.cards-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 15 px;
@@ -14,10 +14,18 @@
   background-color: rgb(171, 163, 159);
   padding: 15px;
   box-shadow: 5px 8px 10px darkgrey;
+  border-radius: 3px;
 }
 
-div .card :hover{
+.card:hover{
   position: relative;
     top: -4px;
     left: -2px;
+    box-shadow: 17px 15px 7px darkgrey;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 3px;
+  object-fit: center;
 }
