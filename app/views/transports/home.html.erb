@@ -7,7 +7,6 @@
 <ul>
   <% @transports.each do |transport| %>
   <li><%= link_to transport.brand, transport_path(transport.id) %>
-  <%= transport.year %> - <%= transport.price %>
+  <%= transport.year %> - <%= transport.price %> €
   <% end %>
 </ul>
-
