@@ -24,9 +24,7 @@
   <div class="cards-container">
     <% @transports.each do |transport| %>
       <div class="card">
-        <%# <%= cl_image_tag transport.photo.key %>
-        <p></p>
-        <p></p>
+        <%= cl_image_tag transport.photo.key %>
         <p><%= transport.brand%></p>
         <p><%= transport.year %>  - Année </p>
         <p><%= transport.price %> $</p>
@@ -34,8 +32,3 @@
     <% end %>
   </div>
 </div>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> e251f6cb1dc3feb46e6a5be09b6163a9d896a36c
