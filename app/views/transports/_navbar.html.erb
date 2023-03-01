@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="http://127.0.0.1:3000/">
     <img src ="https://res.cloudinary.com/dojiqdbe4/image/upload/v1677600746/diable1_wubyti.png">
 </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,17 +10,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item active">
-            <%=link_to 'Home', root_path, class: 'nav-link' %>
+            <%=link_to 'Connect', new_user_session_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Mettre un véhicule sur KékéTuning', new_transport_path, class: 'nav-link' %>
+            <%= link_to 'Create Car', new_transport_path, class: 'nav-link' %>
           </li>
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
+              <a class="dropdown-item" href="#">Tuning</a>
+              <a class="dropdown-item" href="#">Dashbord</a>
+              <a class="dropdown-item" data-turbo-method="delete" href="#">Deconnect</a>
             </div>
           </li>
       </ul>
