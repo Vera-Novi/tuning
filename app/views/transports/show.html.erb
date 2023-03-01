@@ -1,1 +1,10 @@
 <h1>Transport - <%= @transport.brand %></h1>
+
+<% if @transport.photos.attached? %>
+  <%# <%= cl_image_tag @transport.photos.key, width:300, height:300, crop: :fill %>
+  <% @transport.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+<% else %>
+  <%= 'c la merde' %>
+<% end %>
