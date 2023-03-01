@@ -7,6 +7,8 @@
 <h1>Transports</h1>
 <ul>
   <% @transports.each do |transport| %>
-  <li><%= link_to transport.brand, transport_path(transport.id) %></li>
+  <li><%= link_to transport.brand, transport_path(transport.id) %>
+  <%= transport.year %> - <%= transport.price %>
   <% end %>
 </ul>
+<div class="btn btn-info"><%= link_to 'Add transport', new_transport_path(@transport) %></div>
