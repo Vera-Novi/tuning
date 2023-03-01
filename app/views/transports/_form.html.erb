@@ -2,8 +2,6 @@
   <%= f.input :photo, as: :file %>
 <% end %>
 
-<%= simple_form_for(article) do |f| %>
-  <!-- [...] -->
+<%= simple_form_for(transports) do |f| %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <!-- [...] -->
 <% end %>
