@@ -9,8 +9,6 @@
   border-color: white;
   border-top-color: white;
   margin-top: 1px;
-  // text-align: center;
-
 }
 
 .btn-gradient {
@@ -42,38 +40,3 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
-
-// .banner {
-//   background-position: center;
-//   background-size: contain;
-//   background-repeat: no-repeat;
-// }
-
-// .BorderColorChangeElement {
-//   	animation: BorderColorChange 1s ease-out 0s infinite alternate none running;
-// }
-// @keyframes BorderColorChange{
-//   	0%  { border: 10px solid #ffc0cb;}
-//   	100%  { border: 10px solid #ff69b4;}
-// }
-// @keyframes rotateAnim {
-//     0% { transform: rotate(deg);}
-//     100% { transform:rotate(360deg);}
-// }
-// @keyframes scaler {
-//   0% {
-//     transform: scale(1);
-//   }
-//   100% {    transform: scale(1.5);
-//   }
-// }
-// .imgAnim55 {
-//   animation: rotateAnim 10s linear 0s infinite forwards running;
-// }
-// .btnAnim55 {
-//   animation: scaler 1s linear 0s infinite alternate none running;
-// }
-// .btnAnim55:hover{
-//   animation-play-state: paused;
-// }
-// // </style>
