@@ -12,7 +12,7 @@ class TransportsController < ApplicationController
   end
 
   def create
-
+    @transport = Transport.new
     @transport.user_id = current_user.id
     if @transport.save
 
