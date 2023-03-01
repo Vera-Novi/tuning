@@ -31,6 +31,8 @@ class TransportsController < ApplicationController
   private
 
   def transport_params
-    params.require(:transport).permit(:brand, :horse, :year, :price, :user_id)
+
+    params.require(:transport).permit(:brand, :horse, :year, :price, :user_id, photos: [])
+
   end
 end

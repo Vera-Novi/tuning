@@ -1,7 +1,15 @@
 <h1>Transport - <%= @transport.brand %></h1>
+
 <h2><ul class="transport-group">
 
-
+<% if @transport.photos.attached? %>
+  <% @transport.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+<% else %>
+  <%= 'No picture Available' %>
+<% end %>
+  
     <p> Brand : <%= @transport.brand %></p>
     <p> Power : <%= @transport.horse %></p>
     <p> Year : <%= @transport.year %></p>

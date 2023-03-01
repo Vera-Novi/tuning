@@ -1,14 +1,13 @@
 <h1>Keke Transports</h1>
 
-<%= link_to 'SE CONNECTER', new_user_session_path %>
-<%= link_to "SINSCRIRE",  new_user_registration_path%>
-<%= link_to 'SE DECONNECTER', cancel_user_registration_path %>
+<%= link_to 'SE CONNECTER', new_user_session_path, class: 'linkco' %>
+<%= link_to "SINSCRIRE",  new_user_registration_path, class: 'linkco' %>
+<%= link_to "SE DECONNECTER", destroy_user_session_path, data: {turbo_method: :delete}, class: 'linkco' %>
 
-<h1>Transports</h1>
 <ul>
   <% @transports.each do |transport| %>
   <li><%= link_to transport.brand, transport_path(transport.id) %>
   <%= transport.year %> - <%= transport.price %>
   <% end %>
 </ul>
-<div class="btn btn-info"><%= link_to 'Add transport', new_transport_path(@transport) %></div>
+
