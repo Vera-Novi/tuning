@@ -5,7 +5,6 @@
     <a class="btn btn-gradient" href="#">Book now</a>
   </div>
 </div>
-
 <h1>Keke Transports</h1>
 
 <div class="containers">
@@ -28,3 +27,16 @@
   <%= transport.year %> - <%= transport.price %>
   <% end %>
 </ul>
+
+<div class="container">
+  <div class="cards-container">
+    <% @transports.each do |transport| %>
+      <div class="card">
+        <%= cl_image_tag transport.photos[0] %>
+        <%= transport.brand%>
+        <%= transport.year %> - <%= transport.price %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
