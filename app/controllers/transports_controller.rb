@@ -12,10 +12,9 @@ class TransportsController < ApplicationController
   end
 
   def create
-    @transport = Transport.new
+    @transport = Transport.new(transport_params)
     @transport.user_id = current_user.id
     if @transport.save
-
       redirect_to transport_path(@transport)
     else
       render :new, status: :unprocessable_entity
