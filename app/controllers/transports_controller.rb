@@ -22,9 +22,17 @@ class TransportsController < ApplicationController
     end
   end
 
+  def destroy
+    @transport = Transport.find(params[:id])
+    @transport.destroy
+    redirect_to root_path, status: :see_other
+  end
+
   private
 
   def transport_params
-    params.require(:transport).permit(:brand, :horse, :year, :user_id)
+
+    params.require(:transport).permit(:brand, :horse, :year, :price, :user_id, photos: [])
+
   end
 end
