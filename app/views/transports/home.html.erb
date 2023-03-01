@@ -9,12 +9,11 @@
 <div class="container">
   <div class="cards-container">
     <% @transports.each do |transport| %>
-
-    <div class="card">
-      <%= cl_image_tag transport.photos[0] %>
-      <%= transport.brand%>
-      <%= transport.year %> - <%= transport.price %>
-    </div>
+      <div class="card">
+        <%= cl_image_tag transport.photos[0] %>
+        <%= transport.brand%>
+        <%= transport.year %> - <%= transport.price %>
+      </div>
     <% end %>
   </div>
 </div>

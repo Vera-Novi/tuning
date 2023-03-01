@@ -1,0 +1,23 @@
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15 px;
+}
+
+.container{
+  width: 900px;
+  margin:auto;
+  padding: 50px 0px;
+}
+
+.card{
+  background-color: rgb(171, 163, 159);
+  padding: 15px;
+  box-shadow: 5px 8px 10px darkgrey;
+}
+
+div .card :hover{
+  position: relative;
+    top: -4px;
+    left: -2px;
+}
