@@ -1,8 +1,7 @@
 <h1>Keke Transports</h1>
 
-<% if current_user != nil  %>
-  <%= 'Hello' %>
-<% end %>
 <%= link_to 'SE CONNECTER', new_user_session_path, class: 'linkco' %>
 <%= link_to "SINSCRIRE",  new_user_registration_path, class: 'linkco' %>
 <%= link_to "SE DECONNECTER", destroy_user_session_path, data: {turbo_method: :delete}, class: 'linkco' %>
+
+
