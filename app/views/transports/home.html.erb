@@ -5,9 +5,9 @@
 </div>
 
 <div class="containers">
-  <%= link_to 'SE CONNECTER', new_user_session_path, class: 'btn' %>
-  <%= link_to "SINSCRIRE",  new_user_registration_path, class: 'btn' %>
-  <%= link_to "SE DECONNECTER", destroy_user_session_path, data: {turbo_method: :delete}, class: 'btn' %>
+  <div class="btn-home"><a><%= link_to 'SE CONNECTER', new_user_session_path %></a></div>
+  <div class="btn-home"><a><%= link_to "SINSCRIRE",  new_user_registration_path %></a></div>
+  <div class="btn-home"><a><%= link_to "SE DECONNECTER", destroy_user_session_path, data: {turbo_method: :delete} %></a></div>
 </div>
 
 <div class="container">
