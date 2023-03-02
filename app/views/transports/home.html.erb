@@ -5,8 +5,8 @@
 </div>
 
 <div class="containers">
-  <div class="btn-home"><a><%= link_to 'SIGN UP', new_user_session_path %></a></div>
-  <div class="btn-home"><a><%= link_to "SIGN OUT",  new_user_registration_path %></a></div>
+  <div class="btn-home"><a><%= link_to 'SIGN IN', new_user_session_path %></a></div>
+  <div class="btn-home"><a><%= link_to "SIGN UP",  new_user_registration_path %></a></div>
   <div class="btn-home"><a><%= link_to "LOG OUT", destroy_user_session_path, data: {turbo_method: :delete} %></a></div>
 </div>
 
@@ -23,7 +23,7 @@
       <% end %>
         <h1><%= transport.brand %></h1>
         <p>Year : <%= transport.year %></p>
-        <p>Prix :<%= transport.price %> $</p>
+        <p>Prix : <%= transport.price %> $</p>
         <%= link_to 'Book now', new_transport_booking_path(transport), class: 'shadow__btn' %>
       </div>
     <% end %>
