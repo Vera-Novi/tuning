@@ -1,13 +1,12 @@
 class TransportsController < ApplicationController
   before_action :authenticate_user!, except: :home
-  before_action :set_transports, only: [:edit, :update, :destroy]
+  before_action :set_transports, only: [:show, :edit, :update, :destroy]
 
   def home
     @transports = Transport.all
   end
 
   def show
-    @transport = Transport.find(params[:id])
   end
 
   def new
@@ -28,12 +27,14 @@ class TransportsController < ApplicationController
   end
 
   def update
-    @transport.update(transport_params)
-    redirect_to transport_path(@transport)
+    if @transport.update(transport_params)
+      redirect_to transport_path(@transport)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
-    @transport = Transport.find(params[:id])
     @transport.destroy
     redirect_to root_path, status: :see_other
   end
