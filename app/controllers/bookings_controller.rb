@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!, except: :home
-  before_action :set_bookings, only: [:edit, :create, :update, :destroy]
+  before_action :set_bookings, only: %i[:edit :show :update :destroy]
   def new
     @booking = Booking.new
     @transport = Transport.find(params[:transport_id])
