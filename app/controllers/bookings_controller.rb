@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
     @booking.transport = Transport.find(params[:transport_id])
     @booking.user_id = current_user.id
     @booking.save
+
     # No need for app/views/bookings/create.html.erb
     redirect_to booking_path(@booking)
   end
