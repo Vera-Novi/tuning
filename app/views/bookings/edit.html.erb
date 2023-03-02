@@ -1,0 +1,9 @@
+<h1>Change transport</h1>
+
+<div class="container">
+  <%= simple_form_for [@transport, @booking] do |f| %>
+    <%= f.input :reservation_begin, as: :date, html5: true %>
+    <%= f.input :reservation_end, as: :date, html5: true %>
+    <%= f.button :submit, class: "btn btn-primary"%>
+  <% end %>
+</div>

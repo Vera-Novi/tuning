@@ -1,4 +1,4 @@
-<h1>Ajouter un moyen de transport de folie</h1>
+<h1>Modifier les photos existantes</h1>
 
 <div class="container">
   <div class="row">
@@ -8,7 +8,7 @@
         <%= f.input :horse, placeholder: "Which power" %>
         <%= f.input :year, placeholder: "Year" %>
         <%= f.input :price, placeholder: "Price per day" %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%# <%= f.input :photos, as: :file, input_html: { multiple: true }, :label => @transport.photos[0].key %>
         <%= f.submit "Submit list", class: "btn btn-primary" %>
       <% end %>
     </div>
