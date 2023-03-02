@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!, except: :home
+  before_action :set_bookings, only: [:edit, :create, :update, :destroy]
   def new
     @booking = Booking.new
     @transport = Transport.find(params[:transport_id])
@@ -27,5 +29,8 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:reservation_begin, :reservation_end, :user_id, :transport_id)
+  end
+  def set_bookings
+    @transport = Transport.find(params[:id])
   end
 end

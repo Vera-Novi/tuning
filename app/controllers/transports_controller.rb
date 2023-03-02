@@ -1,4 +1,7 @@
 class TransportsController < ApplicationController
+  before_action :authenticate_user!, except: :home
+  before_action :set_transports, only: [:edit, :create, :update, :destroy]
+
   def home
     @transports = Transport.all
   end
@@ -30,8 +33,10 @@ class TransportsController < ApplicationController
   private
 
   def transport_params
-
     params.require(:transport).permit(:brand, :horse, :year, :price, :user_id, photos: [])
+  end
 
+  def set_transports
+    @transport = Transport.find(params[:id])
   end
 end
