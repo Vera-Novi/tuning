@@ -4,7 +4,7 @@
 
 <% if @transport.photos.attached? %>
   <% @transport.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <p><%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %></p>
   <% end %>
 <% else %>
   <%= 'No picture Available' %>
@@ -19,4 +19,3 @@
 <div class="btn btn-warning"><%= link_to 'Back to transports', root_path %></div>
  <div class="btn btn-danger"> <%= link_to "Delete", transport_path(@transport.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></div>
  <div class="btn btn-sucess"><%= link_to 'Book now', new_transport_booking_path(@transport.id) %></div>
-
