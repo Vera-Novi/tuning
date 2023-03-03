@@ -27,7 +27,7 @@
         <h1><%= transport.brand %></h1>
         <p>Year : <%= transport.year %></p>
         <p>Prix : <%= transport.price %> $</p>
-        <%= link_to 'Book now', new_transport_booking_path(transport), class: 'shadow__btn' %>
+        <%= link_to 'Details', transport_path(transport.id), class: 'shadow__btn' %>
       </div>
     <% end %>
   </div>
