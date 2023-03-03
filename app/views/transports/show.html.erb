@@ -1,26 +1,31 @@
 <h1>Transport - <%= @transport.brand %></h1>
 
-<h2><ul class="transport-group">
+<div class="container d-flex">
+    <div class="card-product">
+      <div class="card-image">
+        <% if @transport.photos.attached? %>
+          <% @transport.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, crop: :fill %>
+          <% end %>
+        <% else %>
+          <%= 'No picture Available' %>
+        <% end %>
+      </div>
+      <div class="card-product-infos">
+          <p> Brand : <%= @transport.brand %></p>
+          <p> Power : <%= @transport.horse %></p>
+          <p> Year : <%= @transport.year %></p>
+          <p> Price per day : <%= @transport.price %> $</p>
 
-<% if @transport.photos.attached? %>
-  <% @transport.photos.each do |photo| %>
-    <p><%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %></p>
-  <% end %>
-<% else %>
-  <%= 'No picture Available' %>
-<% end %>
-
-    <p> Brand : <%= @transport.brand %></p>
-    <p> Power : <%= @transport.horse %></p>
-    <p> Year : <%= @transport.year %></p>
-    <p> Price per day : <%= @transport.price %></p>
-</ul>
 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero, nisi odit! Reprehenderit magnam ut voluptatem deleniti reiciendis, at labore inventore odit magni odio vitae id porro, molestiae provident in obcaecati.
 Eos tenetur ducimus nemo, ea reprehenderit magnam nihil optio neque beatae incidunt adipisci! Suscipit asperiores error at. Deleniti consectetur voluptatem officia magnam fugiat dolores esse nostrum totam. Distinctio, aspernatur beatae!
 Dicta molestiae veritatis blanditiis dolore eveniet, quia alias natus, ut vel tempora quas perferendis laudantium temporibus delectus ipsa nesciunt a laboriosam sequi nulla ullam qui dolorem nam! In, magnam veniam.
 Consequuntur laborum voluptatum veritatis? Ea, numquam ipsa quis illo aspernatur magnam molestiae iste, delectus est libero laboriosam, vero exercitationem explicabo dolore voluptate id adipisci maxime deserunt. Porro nesciunt tempora molestias.
 Hic ut facilis explicabo illo dignissimos perspiciatis sunt sed temporibus ipsa, soluta, vero dolores facere saepe omnis debitis veritatis rerum, aspernatur id excepturi totam pariatur ab. Quos rem nemo ad.</p>
-</h2>
+      </div>
+    </div>
+</div>
+
 <div class="containers">
   <div class="btn-home"><%= link_to 'Back to transports', root_path %></div>
   <div class="btn-home"> <%= link_to "Delete", transport_path(@transport.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></div>
