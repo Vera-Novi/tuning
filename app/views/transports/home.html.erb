@@ -17,17 +17,20 @@
   <div class="cards-container">
     <% @transports.each do |transport| %>
       <div class="card">
-      <% if transport.photos.attached? %>
-        <% transport.photos.each do |photo| %>
-            <%= cl_image_tag photo.key %>
-        <% end %>
-      <% else %>
+
+        <% if transport.photos.attached? %>
+          <% transport.photos.each do |photo| %>
+              <%= cl_image_tag photo.key %>
+          <% end %>
+        <% else %>
         <%= 'No Image' %>
-      <% end %>
-        <h1><%= transport.brand %></h1>
-        <p>Year : <%= transport.year %></p>
-        <p>Prix : <%= transport.price %> $</p>
-        <%= link_to 'Details', transport_path(transport.id), class: 'shadow__btn' %>
+        <% end %>
+        <div class="card-details">
+          <h1><%= transport.brand %></h1>
+          <p>Year : <%= transport.year %></p>
+          <h2>Prix : <%= transport.price %> $</h2>
+          <%= link_to 'Details', transport_path(transport.id), class: 'shadow__btn' %>
+        </div>
       </div>
     <% end %>
   </div>

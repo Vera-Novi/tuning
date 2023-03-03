@@ -1,21 +1,23 @@
 <h1>Transport - <%= @transport.brand %></h1>
-
-<h2><ul class="transport-group">
-
-<% if @transport.photos.attached? %>
-  <% @transport.photos.each do |photo| %>
-    <p><%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %></p>
-  <% end %>
-<% else %>
-  <%= 'No picture Available' %>
-<% end %>
-
-    <p> Brand : <%= @transport.brand %></p>
-    <p> Power : <%= @transport.horse %></p>
-    <p> Year : <%= @transport.year %></p>
-    <p> Price per day : <%= @transport.price %></p>
-</ul>
-</h2>
+<div class="container d-flex">
+    <div class="card-product">
+      <div class="card-image">
+        <% if @transport.photos.attached? %>
+          <% @transport.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, crop: :fill %>
+          <% end %>
+        <% else %>
+          <%= 'No picture Available' %>
+        <% end %>
+      </div>
+      <div class="card-product-infos">
+          <p> Brand : <%= @transport.brand %></p>
+          <p> Power : <%= @transport.horse %></p>
+          <p> Year : <%= @transport.year %></p>
+          <p> Price per day : <%= @transport.price %> $</p>
+      </div>
+    </div>
+</div>
 <div class="containers">
   <div class="btn-home"><%= link_to 'Back to transports', root_path %></div>
   <div class="btn-home"> <%= link_to "Delete", transport_path(@transport.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></div>
