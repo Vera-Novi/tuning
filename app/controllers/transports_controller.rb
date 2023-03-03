@@ -3,7 +3,11 @@ class TransportsController < ApplicationController
   before_action :set_transports, only: [:show, :edit, :update, :destroy]
 
   def home
-    @transports = Transport.all
+    if params[:query].present?
+      @transports = Transport.search_by_brand_and_year(params[:query])
+    else
+      @transports = Transport.all
+    end
   end
 
   def show
