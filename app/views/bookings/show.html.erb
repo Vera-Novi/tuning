@@ -1,10 +1,32 @@
-<h1>Booking</h1>
+    <h1>Booking</h1>
 
-<h3> Confirmation number: <%= @booking.id %></h3>
-<p>Start : <%= @booking.reservation_begin %> - End : <%= @booking.reservation_end %></p>
+<div class="container">
+    <h3> Confirmation number: <%= @booking.id %></h3>
+    <p>Start : <%= @booking.reservation_begin %> - End : <%= @booking.reservation_end %></p>
 
 <h2>Transport details :</h2>
+  <% if @booking.transport.photos.attached? %>
+    <% @booking.transport.photos.each do |photo| %>
+        <%= cl_image_tag photo.key %>
+    <% end %>
+  <% else %>
+    <%= 'No Image' %>
+  <% end %>
  <p> Brand : <%= @booking.transport.brand %></p>
     <p> Power : <%= @booking.transport.horse %></p>
     <p> Year : <%= @booking.transport.year %></p>
     <p> Price per day : <%= @booking.transport.price %></p>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, recusandae at. Earum incidunt, tenetur sed vel soluta esse optio dignissimos, consectetur quam eum rerum reprehenderit recusandae perferendis exercitationem odit assumenda!
+Itaque error optio, alias possimus maiores eligendi nostrum sequi, eos nisi excepturi repellendus ea veniam quasi dolore maxime dolorem temporibus, similique commodi laborum. Veritatis, consequuntur? Doloribus consectetur suscipit error nemo?
+Inventore consequuntur fuga porro debitis qui sequi reiciendis culpa unde. Ex, aliquam! Tempore voluptatem, amet corporis repellat vitae assumenda dolorem beatae dolores, voluptatum libero dolore possimus ducimus. Consequuntur, non accusantium.
+Officiis distinctio corporis aliquid esse? Incidunt possimus consequatur et. Porro magni dicta cumque sequi numquam dolor, sed doloribus labore, praesentium beatae eum. Laborum repellendus molestias ipsa temporibus voluptates autem sed?
+Sequi nemo minima quod sint nulla consequuntur placeat autem voluptates nesciunt ab quos vitae quas perspiciatis impedit natus dolorem culpa, in aliquam corrupti doloribus nam? Nam ducimus rem dolor nostrum?
+Exercitationem quae sint quos cupiditate delectus soluta illum dolore quaerat in voluptas ab a vero suscipit inventore natus ipsum expedita, laboriosam saepe! Quae iste earum molestias facilis ab assumenda optio?
+Aliquid eos voluptatibus quia ipsam, repellendus sit commodi aliquam non odio dolorum iste officia sint at. Explicabo atque blanditiis quibusdam quas, asperiores rem, laboriosam molestiae voluptates itaque molestias qui maiores.
+Qui distinctio cupiditate non aut deleniti ratione dignissimos magni magnam, tenetur quos a at laborum praesentium recusandae neque laboriosam nam explicabo quia sint optio! Et pariatur quibusdam voluptatibus incidunt perferendis?
+Cumque, dolores deleniti veniam enim quo consectetur nemo, recusandae officia deserunt, corporis magni quibusdam. Sed, illum minima? Provident delectus et quis voluptates magnam vel vitae at quae atque consequatur. Et.
+Iusto nostrum fugiat alias, praesentium maiores iste est optio deleniti. Amet, vitae. Maiores tempora eligendi odit culpa tenetur veniam dicta, aut hic, saepe fugit eos numquam voluptates dolor non assumenda.</p>
+
+  <%= link_to "Home", root_path(@transports), class: "btn btn-primary" %><br />
+</div>
