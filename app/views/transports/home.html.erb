@@ -4,13 +4,13 @@
   </div>
 </div>
 
-<div class="containers">
-  <% if user_signed_in? %>
-    <div class="btn-home"><a><%= link_to "LOG OUT", destroy_user_session_path, data: {turbo_method: :delete} %></a></div>
-  <% else %>
-    <div class="btn-home"><a><%= link_to 'SIGN IN', new_user_session_path %></a></div>
-    <div class="btn-home"><a><%= link_to "SIGN UP",  new_user_registration_path %></a></div>
-  <% end %>
+<div class='containers m-3'>
+    <%= form_with url: root_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "input",
+      placeholder: "Find a turbo transport" %>
+    <% end %>
 </div>
 
 <div class="container">
